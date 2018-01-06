@@ -1,0 +1,28 @@
+body {
+  background: white;
+  text-align: center;
+  width: 100%;
+}
+
+.container {
+  border: solid red;
+}
+
+p {
+  font-size: 30px;
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+}
+
+.buttons {
+ text-align: center;
+ margin-right: 10px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+
+.divContent {
+  float: left;
+  width: 25%;
+}
