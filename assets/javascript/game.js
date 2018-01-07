@@ -2,15 +2,17 @@
 $(document).ready(function() {
 // console.log("Get ready to click");
 
-//create an array of strings for topics
-var topics = ['McLaren', 'Ferrari', "Nissan", 'Toyota', 'Bugatti', 'Lamborghini', 'Pagani', 'Aston Martin'];
+var aud = document.getElementById("myAudio");
+aud.volume = 0.2; // 1 means 100%
 
+//create an array of strings for topics
+var topics = ['Acura NSX', 'Subaru STI', "Nissan GTR", 'Toyota Supra', 'Toyota AE86', 'Honda Type-R', 'Mazada RX-7'];
 
 function createButtons(){
 	$('.buttons').empty();
 	for (var i= 0; i < topics.length; i++){
-	$('.buttons').append("<button data-name='" + topics[i] + "'>" + topics[i] + "</button>");
-	}
+	$('.buttons').css('color', 'red').append("<button data-name='" + topics[i] + "'>" + topics[i] + "</button>");
+}
 };
 
 createButtons();
@@ -42,7 +44,7 @@ $(".buttons").on("click", "button", function(event) {
 			// any questions on the what/why/how of it!
 
 			// first, each time we loop through, we're creating a new img tag
-			var newDiv = $("<div />").addClass("divContainer");
+			var newDiv = $("<div />").addClass("divContent");
 			var newImg = $("<img class='giphy' />");
       var rating= response.data[i].rating;
       var p = $('<h6>').text("Ratings: " + rating);

@@ -1,46 +1,70 @@
 body {
-  background: rgb(255, 255, 255);
-  text-align: center;
-  width: 100%;
-  margin: 0 auto;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .container {
-  /* border: solid red; */
-  max-width: 100%;
-  height: 800px;
+    /* border: solid red; */
+    max-width: 100%;
+    height: 800px;
 }
+
 p {
-  font-size: 30px;
-  text-transform: uppercase;
-  text-shadow: 2px black;
-  color: black;
-}
-
-.search {
-  width: 100%;
-}
-
-#searchInput {
-  text-align: center;
+    font-size: 39px;
+    text-transform: uppercase;
+    text-shadow: 5px 5px grey;
+    color: black;
 }
 
 .buttons {
-/* border-radius: 5px; */
- text-align: center;
- /* background: lightgray; */
- color: red;
- /* margin-right: 10px;
+    /* border-radius: 5px; */
+    text-align: center;
+    /* background: black; */
+    color: red;
+    /* margin-right: 10px;
  margin-top: 10px; */
- margin-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.search {
+    width: 100%;
+}
+
+form {
+    padding: 13px 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#searchInput {
+    text-align: center;
+}
+
+#submitButton {
+    color: white;
+    background: red;
 }
 
 .coolGifs {
-  width: 100%;
-  position: left;
+    width: 100%;
+    position: left;
 }
 
-.divContainer {
-  float: left;
-  width: 25%;
+
+/* DivContainer from JS */
+
+.divContent {
+    float: left;
+    width: 25%;
 }
+
+.giphy-embed {
+  border: 9px black;
+}
+
+
+
