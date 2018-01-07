@@ -1,10 +1,9 @@
 //Making sure the DOM is ready, once the code is ready, it will manipulate the DOM to get it working
 $(document).ready(function() {
-console.log("Get ready to click");
+// console.log("Get ready to click");
 
 //create an array of strings for topics
-var topics = ['McLaren', 'Ferrari', 'Audi', 'Bugatti', 'Lamborghini', 'Pagani', 'Aston Martin'];
-
+var topics = ['McLaren', 'Ferrari', "Nissan", 'Toyota', 'Bugatti', 'Lamborghini', 'Pagani', 'Aston Martin'];
 
 
 function createButtons(){
@@ -14,11 +13,18 @@ function createButtons(){
 	}
 };
 
-
 createButtons();
 
-$(".buttons").on("click", "button", function() {
+function createNewButton(){
+	var newButtonText= $('#searchInput').val();
+	console.log(newButtonText);
+	topics.push(newButtonText);
+	createButtons()
+};
+
+$(".buttons").on("click", "button", function(event) {
 	event.preventDefault();
+	$(".coolGifs").empty();
 	var buttonText = $(this).attr("data-name");
 	var queryUrl = "http://api.giphy.com/v1/gifs/search?q=" + buttonText + "&limit=10&api_key=dc6zaTOxFJmzC";
 
@@ -36,7 +42,7 @@ $(".buttons").on("click", "button", function() {
 			// any questions on the what/why/how of it!
 
 			// first, each time we loop through, we're creating a new img tag
-			var newDiv = $("<div />").addClass("divContent");
+			var newDiv = $("<div />").addClass("divContainer");
 			var newImg = $("<img class='giphy' />");
       var rating= response.data[i].rating;
       var p = $('<h6>').text("Ratings: " + rating);
@@ -44,7 +50,6 @@ $(".buttons").on("click", "button", function() {
 			// then, with each chained '.attr', we add the different data
 			// attributes as well as the img src attribute
 			newImg.attr("data-state", "still")
-				
 				.attr("data-still", response.data[i].images.fixed_height_small_still.url)
 				.attr("data-anim", response.data[i].images.fixed_height_small.url)
 				.attr("src", response.data[i].images.fixed_height_small_still.url)
@@ -58,7 +63,7 @@ $(".buttons").on("click", "button", function() {
 
 });
 
-$(".coolGifs").on("click", ".giphy", function() {
+$(".coolGifs").on("click", ".giphy", function(event) {
 	event.preventDefault();
 	// clear the coolGifs container first!!!
 	// $('.giphy').empty();
@@ -85,6 +90,9 @@ $(".coolGifs").on("click", ".giphy", function() {
 
 // this is calling it initially --- you'll be calling it again 
 // each time a new button is created
-createButtons();
-
+$("#submitButton").on("click", function(event){
+	event.preventDefault();
+	console.log("Watch Grand Tour Season 2");
+createNewButton();
+})
 });

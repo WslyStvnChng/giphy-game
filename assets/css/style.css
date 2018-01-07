@@ -1,28 +1,46 @@
 body {
-  background: white;
+  background: rgb(255, 255, 255);
   text-align: center;
   width: 100%;
+  margin: 0 auto;
 }
 
 .container {
-  border: solid red;
+  /* border: solid red; */
+  max-width: 100%;
+  height: 800px;
 }
-
 p {
   font-size: 30px;
-  text-align: center;
-  color: white;
   text-transform: uppercase;
+  text-shadow: 2px black;
+  color: black;
+}
+
+.search {
+  width: 100%;
+}
+
+#searchInput {
+  text-align: center;
 }
 
 .buttons {
+/* border-radius: 5px; */
  text-align: center;
- margin-right: 10px;
- margin-top: 10px;
+ /* background: lightgray; */
+ color: red;
+ /* margin-right: 10px;
+ margin-top: 10px; */
  margin-bottom: 10px;
 }
 
-.divContent {
+.coolGifs {
+  width: 100%;
+  position: left;
+}
+
+.divContainer {
   float: left;
   width: 25%;
 }
